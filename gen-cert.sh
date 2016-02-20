@@ -18,7 +18,7 @@
 #	http://users.sosdg.org/~bruns/lets-encrypt/apache-le-alias.conf
 #	And:
 #	mkdir -p /var/www/letsencrypt-root/.well-known/acme-challenge
-#	gen-cert.sh -d domain1.com -d domain2.com -r /var/www/letsencrypt-root/.well-known/acme-challenge
+#	gen-cert.sh -d domain1.com -d domain2.com -r /var/www/letsencrypt-root
 #
 # 3) Proxy auth
 #	This auth method uses the standalone authenticator with a mod_proxy
