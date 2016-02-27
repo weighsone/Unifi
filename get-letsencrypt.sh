@@ -17,17 +17,17 @@ ZIPURL="https://github.com/letsencrypt/letsencrypt/archive/master.zip"
 GITREPO="https://github.com/letsencrypt/letsencrypt"
 
 if [ $# -eq 0 ]; then
-    echo "Command Help:"
-    echo "-g : download using git from master repo"
-    echo "-z : download zip from main repo and extract"
+	echo "Command Help:"
+	echo "-g : download using git from master repo"
+	echo "-z : download zip from main repo and extract"
     exit 0
 fi
 
 
-while getopts "g:z:" opt; do
+while getopts "gz" opt; do
     case $opt in
     g) downloadtype="git";;
-	t) downloadtype="zip";;
+	z) downloadtype="zip";;
     esac
 done
 
@@ -35,10 +35,12 @@ cd ${DESTDIR}
 
 case $downloadtype in
 	git)
+		echo "Cloning repo into ${DESTDIR}..."
 		git clone ${GITREPO}
 		;;
 	tar)
+		echo "Downloading ${ZIPURL} into ${DESTDIR}
 		curl -o letsencrypt.zip ${ZIPURL}
 		unzip letsencrypt.zip
-	;;
+		;;
 esac
