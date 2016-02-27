@@ -38,7 +38,7 @@ case $downloadtype in
 		echo "Cloning repo into ${DESTDIR}..."
 		git clone ${GITREPO}
 		;;
-	tar)
+	zip)
 		echo "Downloading ${ZIPURL} into ${DESTDIR}"
 		curl -o letsencrypt.zip ${ZIPURL}
 		unzip letsencrypt.zip
