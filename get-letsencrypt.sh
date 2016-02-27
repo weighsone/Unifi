@@ -18,7 +18,7 @@ GITREPO="https://github.com/letsencrypt/letsencrypt"
 
 if [ $# -eq 0 ]; then
 	echo "Command Help:"
-	echo "-g : download using git from master repo"
+	echo "-g : download using git from master repo (recommended)"
 	echo "-z : download zip from main repo and extract"
     exit 0
 fi
