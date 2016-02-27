@@ -39,7 +39,7 @@ case $downloadtype in
 		git clone ${GITREPO}
 		;;
 	tar)
-		echo "Downloading ${ZIPURL} into ${DESTDIR}
+		echo "Downloading ${ZIPURL} into ${DESTDIR}"
 		curl -o letsencrypt.zip ${ZIPURL}
 		unzip letsencrypt.zip
 		;;
