@@ -1,0 +1,3 @@
+02/27/2016
+    - Make output a little more descriptive in the Unifi script
+        so you know whats going on in case things fail for some reason
