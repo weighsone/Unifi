@@ -13,7 +13,7 @@
 # Where to store the LetsEncrypt package
 DESTDIR="/usr/src/"
 
-ZIPURL="https://github.com/letsencrypt/letsencrypt/archive/master.zip"
+ZIPURL="https://codeload.github.com/letsencrypt/letsencrypt/zip/master"
 GITREPO="https://github.com/letsencrypt/letsencrypt"
 
 if [ $# -eq 0 ]; then
