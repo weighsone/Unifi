@@ -13,7 +13,7 @@
 # Where to store the LetsEncrypt package
 DESTDIR="/usr/src/"
 
-ZIPURL="https://codeload.github.com/letsencrypt/letsencrypt/zip/master"
+ZIPURL="https://github.com/letsencrypt/letsencrypt/archive/master.zip"
 GITREPO="https://github.com/letsencrypt/letsencrypt"
 
 if [ $# -eq 0 ]; then
@@ -40,7 +40,7 @@ case $downloadtype in
 		;;
 	zip)
 		echo "Downloading ${ZIPURL} into ${DESTDIR}"
-		curl -o letsencrypt.zip ${ZIPURL}
+		curl -L -o letsencrypt.zip ${ZIPURL}
 		unzip letsencrypt.zip
 		;;
 esac
