@@ -40,7 +40,8 @@ case $downloadtype in
 		;;
 	zip)
 		echo "Downloading ${ZIPURL} into ${DESTDIR}"
-		curl -L -o letsencrypt.zip ${ZIPURL}
-		unzip letsencrypt.zip
+		curl -L -o letsencrypt-master.zip ${ZIPURL}
+		unzip -q letsencrypt-master.zip
+		mv letsencrypt-master letsencrypt
 		;;
 esac
