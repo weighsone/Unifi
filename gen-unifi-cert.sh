@@ -6,6 +6,8 @@
 # 02/02/2016: Fixed some errors with key export/import, removed lame docker requirements
 # 02/27/2016: More verbose progress report
 
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
 # The main domain name of your controller
 DOMAIN="unifi.xxxx.xxxxx"
 
