@@ -56,7 +56,7 @@ if `md5sum -c /etc/letsencrypt/live/${DOMAIN}/cert.pem.md5 &>/dev/null`; then
 else
 	TEMPFILE=$(mktemp)
 	echo "Cert has changed, updating controller..."
-	md5sum /etc/letsencrypt/live/${domains[0]}/cert.pem > /etc/letsencrypt/live/${domains[0}/cert.pem.md5 
+	md5sum /etc/letsencrypt/live/${domains[0]}/cert.pem > /etc/letsencrypt/live/${domains[0]}/cert.pem.md5 
 	echo "Using openssl to prepare certificate..."
 	openssl pkcs12 -export  -passout pass:aircontrolenterprise \
     	-in /etc/letsencrypt/live/${domains[0]}/cert.pem \
