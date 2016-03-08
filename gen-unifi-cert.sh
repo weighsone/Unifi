@@ -35,6 +35,7 @@ for val in "${domains[@]}"; do
         DOMAINS="${DOMAINS} -d ${val} "
 done
 
+MAINDOMIN=${MAINDOMAIN}
 
 if [[ $renew == "yes" ]]; then
 	LEOPTIONS=${RENEWCERT}
@@ -56,13 +57,13 @@ if `md5sum -c /etc/letsencrypt/live/${DOMAIN}/cert.pem.md5 &>/dev/null`; then
 else
 	TEMPFILE=$(mktemp)
 	echo "Cert has changed, updating controller..."
-	md5sum /etc/letsencrypt/live/${domains[0]}/cert.pem > /etc/letsencrypt/live/${domains[0]}/cert.pem.md5 
+	md5sum /etc/letsencrypt/live/${MAINDOMAIN}/cert.pem > /etc/letsencrypt/live/${MAINDOMAIN}/cert.pem.md5 
 	echo "Using openssl to prepare certificate..."
 	openssl pkcs12 -export  -passout pass:aircontrolenterprise \
-    	-in /etc/letsencrypt/live/${domains[0]}/cert.pem \
-    	-inkey /etc/letsencrypt/live/${domains[0]}/privkey.pem \
+    	-in /etc/letsencrypt/live/${MAINDOMAIN}/cert.pem \
+    	-inkey /etc/letsencrypt/live/${MAINDOMAIN}/privkey.pem \
     	-out ${TEMPFILE} -name unifi \
-    	-CAfile /etc/letsencrypt/live/${domains[0]}/chain.pem -caname root
+    	-CAfile /etc/letsencrypt/live/${MAINDOMAIN}/chain.pem -caname root
 	echo "Stopping Unifi controller..."
 	service unifi stop
 	echo "Removing existing certificate from Unifi protected keystore..."
@@ -79,8 +80,8 @@ else
 	rm -f ${TEMPFILE}
 	echo "Importing cert into Unifi database..."
 	java -jar /usr/lib/unifi/lib/ace.jar import_cert \
-    	/etc/letsencrypt/live/${domains[0]}/cert.pem \
-    	/etc/letsencrypt/live/${domains[0]}/chain.pem \
+    	/etc/letsencrypt/live/${MAINDOMAIN}/cert.pem \
+    	/etc/letsencrypt/live/${MAINDOMAIN}/chain.pem \
     	${EXTRACERT}
 	echo "Starting Unifi controller..."
 	service unifi start
