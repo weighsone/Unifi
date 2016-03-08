@@ -51,7 +51,7 @@ echo "Firing up standalone authenticator on TCP port 443 and requesting cert..."
     ${LEOPTIONS}
     
 
-if `md5sum -c /etc/letsencrypt/live/${DOMAIN}/cert.pem.md5 &>/dev/null`; then
+if `md5sum -c /etc/letsencrypt/live/${MAINDOMAIN}/cert.pem.md5 &>/dev/null`; then
 	echo "Cert has not changed, not updating controller."
 	exit 0
 else
