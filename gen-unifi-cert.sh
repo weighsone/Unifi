@@ -71,8 +71,8 @@ else
 		-deststorepass aircontrolenterprise
 	echo "Inserting certificate into Unifi keystore..."
 	keytool -trustcacerts -importkeystore \
-    	-deststorepass aircontrolenterprise \
-    	-destkeypass aircontrolenterprise \
+		-deststorepass aircontrolenterprise \
+		-destkeypass aircontrolenterprise \
     	-destkeystore /usr/lib/unifi/data/keystore \
     	-srckeystore ${TEMPFILE} -srcstoretype PKCS12 \
     	-srcstorepass aircontrolenterprise \
