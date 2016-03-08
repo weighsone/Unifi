@@ -36,7 +36,7 @@ for val in "${domains[@]}"; do
 done
 
 
-if ( $renew == "yes" ); then
+if [[ $renew == "yes" ]]; then
 	LEOPTIONS=${RENEWCERT}
 else
 	LEOPTIONS="${email} ${DOMAINS} ${NEWCERT}"
