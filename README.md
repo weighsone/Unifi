@@ -23,14 +23,15 @@ apache-le-proxy.conf - Use with apache for LE well-known proxy config
 How To Use
 =============================================================
 
-gen-unifi-cert.sh
-	1) Do initial cert generation:
+##gen-unifi-cert.sh
+
+	1. Do initial cert generation:
 	
-		gen-unifi-cert.sh -e email@address.com -d unifi.somedomain.com -d unifi.someotherdomain.com
+		`gen-unifi-cert.sh -e email@address.com -d unifi.somedomain.com -d unifi.someotherdomain.com`
 		
-	2) Put in /etc/cron.weekly/renew-unifi-ssl if everything works okay:
+	2. Put in /etc/cron.weekly/renew-unifi-ssl if everything works okay:
 	
-		/path/to/script/gen-unifi-cert.sh -r -d unifi.somedomain.com -d unifi.someotherdomain.com
+		`/path/to/script/gen-unifi-cert.sh -r -d unifi.somedomain.com -d unifi.someotherdomain.com`
 		
-	3) Script will now run weekly and renew the certificate if necessary ( <30 days remain)
+	3. Script will now run weekly and renew the certificate if necessary ( <30 days remain)
 		and restart unifi only if cert has been renewed.
