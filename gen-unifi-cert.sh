@@ -35,7 +35,7 @@ for val in "${domains[@]}"; do
         DOMAINS="${DOMAINS} -d ${val} "
 done
 
-MAINDOMIN=${MAINDOMAIN}
+MAINDOMAIN=${domains[0]}
 
 if [[ $renew == "yes" ]]; then
 	LEOPTIONS=${RENEWCERT}
