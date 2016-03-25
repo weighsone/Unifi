@@ -49,7 +49,7 @@ done
 
 MAINDOMAIN=${domains[0]}
 
-if [[ ! -z ${MAINDOMAIN} ]]; then
+if [[ -z ${MAINDOMAIN} ]]; then
 	echo "Error: At least one -d argument is required"
 	exit 1
 fi
