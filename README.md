@@ -15,7 +15,8 @@ gen-unifi-cert.sh - Script to add LE cert to a Unifi controller
 
 ##Support Files
 
-DSTROOTCAX3.txt - Root CA cert needed for use with the gen-unifi-cert.sh script
+DSTROOTCAX3.txt - Root CA cert for use with the gen-unifi-cert.sh script
+(the above file is now optional and unneeded as the cert is embedded)
 
 apache-le-alias.conf - Use with apache for LE well-known alias config
 
