@@ -1,3 +1,10 @@
+03/24/2016
+	- Updated gen-unifi-cert.sh to do more sanity checks and embed the
+		needed IdenTrust cert so we don't need to include it separately.
+	- Added -i option to gen-unifi-cert.sh so that we can reinject the
+		cert without having to request a new cert from LE.  This is
+		in case for some reason a previous cert isn't imported correctly.
+
 02/27/2016
     - Make output a little more descriptive in the Unifi script
         so you know whats going on in case things fail for some reason
