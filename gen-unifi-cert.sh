@@ -2,6 +2,7 @@
 # Modified script from here: https://github.com/FarsetLabs/letsencrypt-helper-scripts/blob/master/letsencrypt-unifi.sh
 # Modified by: Brielle Bruns <bruns@2mbit.com>
 # Download URL: https://source.sosdg.org/brielle/lets-encrypt-scripts
+# Version: 1.2
 # Last Changed: 03/24/2016
 # 02/02/2016: Fixed some errors with key export/import, removed lame docker requirements
 # 02/27/2016: More verbose progress report
