@@ -23,6 +23,20 @@ apache-le-proxy.conf - Use with apache for LE well-known proxy config
 
 # How To Use
 
+## gen-cert.sh
+
+1. Do initial cert generation (if using webroot, see script contents for more methods of authentication):
+	
+		gen-cert.sh -e email@address.com -d somedomain.com -d otherdomain.com -r /var/www/letsencrypt-root/
+		
+2. Copy cron/renew-ssl-weekly.sh to /etc/cron.weekly, edit as appropriate
+
+3. Run:
+
+		chmod 750 /etc/cron.weekly/renew-ssl-weekly.sh  
+		
+3. Script will now run weekly and renew the certificate if necessary ( < 30 days remain).  Don't forget to add any necessary file copies/symlinks/service restarts as needed once the scripts are updated.
+
 ## gen-unifi-cert.sh
 
 1. Do initial cert generation:
