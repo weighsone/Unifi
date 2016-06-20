@@ -21,7 +21,7 @@ while getopts "ird:e:" opt; do
 done
 
 # Location of LetsEncrypt binary we use
-LEBINARY="/usr/src/letsencrypt/letsencrypt-auto"
+LEBINARY="/usr/src/letsencrypt/certbot-auto"
 
 # Command line options depending on New or Renew.
 NEWCERT="--renew-by-default certonly"
