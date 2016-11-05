@@ -66,7 +66,7 @@ if [[ ${onlyinsert} != "yes" ]]; then
 	${LEBINARY} \
 		--server https://acme-v01.api.letsencrypt.org/directory \
     	--agree-tos \
-		--standalone --standalone-supported-challenges tls-sni-01 \
+		--standalone --preferred-challenges tls-sni-01 \
     	${LEOPTIONS}
 fi    
 
